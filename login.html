@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div id="head">
+        <div class="head-con">
+            <h1><img src="images/logo_02.png" alt=""></h1>
+            <p>帮助</p>
+        </div>
+    </div>
+    <div id="main">
+        <div class="main-con">
+            <div class="top">
+                <h2>
+                    凡客 Vancl 登录
+                    <span>没有账户免费<a href="register.html">注册</a>
+            </div>
+            <div class="left">
+                <img src="https://i1.vanclimg.com/cms/20160902/login120412_newlogo.jpg" alt="">
+            </div>
+            <div class="login">
+                <div class="tag">
+                    <ul class="tags">
+                        <li class="on">普通登录</li>
+                        <li>快速登录</li>
+                    </ul>
+                </div>
+                <div class="input">
+                    <input type="text" name="" id="put1" placeholder="请输入用户名">
+                    <br>
+                    <input type="text" name="" id="put2" placeholder="请输入密码">
+                </div>
+                <button class="denglu">登录</button>
+                <div class="foot">
+                    <p>使用合作网站账号登录凡客</p>
+                    <img src="images/logos.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        <div class="bottom-con">
+            <p>
+                Copyright 2007 - 2020 vancl.com All Rights Reserved 京ICP证100557号 京公网安备11011502002400号
+                出版物经营许可证新出发京批字第直110138号</p>
+            <div class="img">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(".denglu").click(function () {
+        // 发送ajax请求
+        let http = new XMLHttpRequest();
+        http.open("get", `http://192.168.1.5:8080/login?username=${$("#put1").val()}&password=${$("#put2").val()}`)
+        http.send()
+        http.onreadystatechange = function () {
+            if (http.readyState === 4) {
+                if (http.responseText === "success") {
+                    alert("登录成功")
+                    location.href = "http://192.168.1.5/2/fanke/index.html"
+                }
+                else {
+                    alert("用户名或密码错误")
+                }
+            }
+        }
+    })
+</script>
