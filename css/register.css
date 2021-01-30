@@ -1,0 +1,177 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#head{
+    width: 100%;
+    height: 58px;
+}
+.head-con{
+    width: 1200px;
+    height: 58px;
+    margin: 0 auto;
+    /* background: pink; */
+    padding: 0 20px 0 20px;
+    border-bottom: 1px solid #7a7f89;
+}
+.head-con h1{
+    float: left;
+}
+#head p{
+    font-size: 12px;
+    line-height: 58px;
+    float:right;
+}
+#main{
+    width: 100%;
+}
+.main-con{
+    width: 1200px;
+    height: 445px;
+    border-bottom: 1px solid #999;
+    margin: 50px auto 10px;
+}
+.top{
+    width: 100%;
+    height: 25px; 
+    position: relative;
+}
+.top h2{
+    font-size: 14px; 
+    color: #979797; 
+    text-align: left;
+    height: 25px; 
+    line-height: 25px; 
+    float: right; 
+    margin: 0 100px 0 0; width: 400px;
+    position: relative;
+}
+.top h2 span{
+    font-size: 14px; 
+    font-weight: normal; 
+    position: absolute;
+    right: 0px; 
+    bottom: 0px;
+}
+.main-con .left{
+    float: left;
+    width: auto;
+    height: auto;
+    margin: 18px 0 0 150px;
+}
+.main-con .login{
+    width: 400px;
+    border: 1px solid #D1D1D1;
+    background-color: #fff;
+    float: right;
+    margin-top: 18px;
+    margin-right: 100px;
+}
+.main-con .login .tag{
+    width: 400px;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #cbcbcb;
+}
+.main-con .login .tag .on{
+    width: 400px;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+    text-align: center;
+    background: #b42025;
+    color: #fff;
+    font-weight: bolder;
+}
+.login #put1{
+    width: 360px;
+    height: 45px;
+    margin: 20px 0 0 15px;
+}
+#put2{
+    width: 360px;
+    height: 45px;
+    margin: 20px 0 20px 15px;
+}
+#check{
+    margin-left: 20px;
+}
+.login .free{
+    color: #656565;
+    font-size: 14px;
+}
+.login .zhuce{
+    width: 360px;
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    background: #b42025;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 15px;
+    margin-top: 30px;
+    border: 1px solid #D1D1D1;
+    outline: none;
+    cursor: pointer;
+}
+.login .foot{
+    width: 360px;
+    height: auto;
+    margin: 10px auto;
+}
+.login .foot p{
+    color: #a4a4a4;
+    line-height: 14px;
+    font-size: 14px;
+    font-weight: bolder;
+    margin:20px 0 20px 0
+}
+#bottom{
+    width: 100%;
+    height: 120px;
+}
+.bottom-con{
+    width: 1200px;
+    height: 120px;
+    margin: 0 auto;
+    /* background: pink; */
+}
+.bottom-con p{
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 1200px;
+}
+.bottom-con .img{
+    height: 42px;
+    width: 100%;
+    margin-bottom: 25px;
+    text-align: center;
+    display: inline-block;
+}
+.bottom-con .img span:nth-child(1){
+    background: url(https://ssl.vanclimg.com/login/login_spritesbg.png) no-repeat scroll 0 -400px transparent;
+    display: inline-block;
+    height: 42px;
+    width: 113px;
+}
+.bottom-con .img span:nth-child(2){
+    background: url(https://ssl.vanclimg.com/login/login_spritesbg.png) no-repeat scroll 0 -448px transparent;
+    display: inline-block;
+    height: 45px;
+    width: 156px;
+}
+.bottom-con .img span:nth-child(3){
+    background: url(https://ssl.vanclimg.com/login/login_spritesbg.png) no-repeat scroll 0 -494px transparent;
+    display: inline-block;
+    height: 42px;
+    width: 96px;
+}
+.bottom-con .img span:nth-child(4){
+    background: url(https://ssl.vanclimg.com/login/login_spritesbg.png) no-repeat scroll -97px -494px transparent;
+    display: inline-block;
+    height: 42px;
+    width: 101px;
+}
