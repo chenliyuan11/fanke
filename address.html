@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>填写地址</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/address.css">
+</head>
+
+<body>
+    <div id="worp">
+        <div class="worp-con">
+            <!-- 头部 -->
+            <div id="header">
+                <h2>
+                    <span>帮助中心</span>
+                </h2>
+            </div>
+            <div id="nav">
+                <h3>
+                    <span>我的购物车</span>
+                    <span>填写核对信息单</span>
+                    <span>提交订单成功</span>
+                </h3>
+            </div>
+            <!-- 地址栏 -->
+            <div id="address">
+                <p class="p1">添加收货地址</p>
+                <p class="p2">
+                    <span>收货人:&nbsp;</span>
+                    <input type="text" placeholder="请输入姓名">
+                </p>
+                <p class="p3">
+                    <span>地&nbsp;&nbsp;&nbsp;&nbsp;区:</span>
+                    <select name="" id="province"></select>
+                    <select name="" id="city"></select>
+                    <select name="" id="area"></select>
+                </p>
+                <p class="p4">
+                    <span>详细地址:</span>
+                    <input type="text" placeholder="请输入家庭详细地址与门牌号">
+                </p>
+                <p class="p5">
+                    <span>手&nbsp;&nbsp;&nbsp;&nbsp;机:</span>
+                    <input type="text" placeholder="请输入您的手机号">
+                </p>
+                <p class="p6">
+                    <span>邮政编码:</span>
+                    <input type="text" placeholder="请输入邮政编码">
+                </p>
+            </div>
+            <!-- tijiao -->
+            <div class="commit">
+                <h2>商品</h2>
+                <p class="p1">
+                    <span>凡客卫衣 廓形连帽 黑色</span>
+                    <span>L</span>
+                    <span>￥200</span>
+                </p>
+                <button class="but">提交订单</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/machine.js"></script>
+<script src="js/citys.js"></script>
+<script>
+    let selectcity = {
+            updateCity(index) {
+                // 更新城市信息
+                var index = index || 0;
+                $("#city").innerHTML = ""
+                citys[index].mallCityList.forEach(item => {
+                    let option = document.createElement("option")
+                    option.innerHTML = item.cityName
+                    $("#city").appendChild(option)
+                })
+            },
+            // 更新区信息
+            updateArea(provinceIndex, cityIndex) {
+                $("#area").innerHTML = ""
+                var provinceIndex = provinceIndex || 0;
+                var cityIndex = cityIndex || 0;
+                citys[provinceIndex].mallCityList[cityIndex].mallAreaList.forEach(item => {
+                    let option = document.createElement("option")
+                    option.innerHTML = item.areaName
+                    $("#area").appendChild(option)
+                })
+            },
+             // 初始化
+             init() {
+                citys.forEach(item => {
+                    let option = document.createElement("option")
+                    option.innerHTML = item.provinceName
+                    $("#province").appendChild(option)
+                })
+                this.updateCity(0)
+                this.updateArea(0,0)
+                $("#province").onchange = ()=> {
+                    this.updateCity($("#province").selectedIndex)
+                    this.updateArea($("#province").selectedIndex, $("#city").selectedIndex)
+                }
+                // 监听市级
+                $("#city").onchange = ()=> {
+                    this.updateArea($("#province").selectedIndex,$("#city").selectedIndex)
+                }
+            }
+        }
+        selectcity.init()
+</script>
+
+</html>
