@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/shopcar.css">
 </head>
+
 <body>
     <div id="worp">
         <div class="worp-con">
@@ -40,7 +42,7 @@
             <table cellspacing="0">
                 <thead>
                     <tr>
-                        <td><input type="checkbox" >&nbsp;&nbsp;全选</td>
+                        <td>选择</td>
                         <td>商品名称</td>
                         <td>尺寸</td>
                         <td>单价</td>
@@ -53,36 +55,21 @@
                 <tbody>
                     <tr>
                         <td>
-                            <input type="checkbox" >
+                            <input type="checkbox" class="check">
                         </td>
                         <td>凡客卫衣 廓形连帽 黑色</td>
                         <td>L</td>
-                        <td>￥90</td>
+                        <td>￥<span class="danjia">90</span></td>
                         <td class="but">
                             <button class="but-left">-</button>
-                            <span class="span">0</span>
+                            <span class="span">1</span>
                             <button class="but-right">+</button>
                         </td>
                         <td>-</td>
-                        <td>90</td>
-                        <td>删除</td>
+                        <td class="price">90</td>
+                        <td class="delete">删除</td>
                     </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" >
-                        </td>
-                        <td>凡客卫衣 廓形连帽 黑色</td>
-                        <td>L</td>
-                        <td>￥90</td>
-                        <td class="but">
-                            <button class="but-left">-</button>
-                            <span class="span">0</span>
-                            <button class="but-right">+</button>
-                        </td>
-                        <td>-</td>
-                        <td>90</td>
-                        <td>删除</td>
-                    </tr>
+
                 </tbody>
             </table>
             <div id="buttom">
@@ -90,13 +77,17 @@
                 <h4>
                     <span>产品金额总计(不含费用) </span>
                     <span>￥</span> <span>0</span>
-                    <button class="jiesuan">￥去结算&gt;&gt;</button>
+                    <a href=""></a>
+                    <a href="address.html">
+                        <button class="jiesuan">￥去结算&gt;&gt;</button>
+                    </a>
                 </h4>
             </div>
             <div id="foot">
                 <div class="foot-con">
                     <div class="footTop">
-                        <p class="p1"> Copyright 2007 - 2021 vancl.com All Rights Reserved 京ICP证100557号 京公网安备11010102000579号 出版物经营许可证新出发京批字第直110138号</p>
+                        <p class="p1"> Copyright 2007 - 2021 vancl.com All Rights Reserved 京ICP证100557号
+                            京公网安备11010102000579号 出版物经营许可证新出发京批字第直110138号</p>
                     </div>
                     <div class="footBottom">
                         <div class="left"></div>
@@ -108,4 +99,24 @@
         </div>
     </div>
 </body>
+
 </html>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(".but-right").click(function () {
+        $(".span").html(parseInt($(".span").html()) + 1)
+        $(".price").html(parseInt($(".danjia").html()) * parseInt($(".span").html()))
+    })
+    // 减号
+    $(".but-left").click(function () {
+        if(parseInt($(".span").html())<1){
+            return 0
+        }
+        $(".span").html(parseInt($(".span").html()) - 1)
+        $(".price").html(parseInt($(".danjia").html()) * parseInt($(".span").html()))
+    })
+    // 删除
+    $(".delete").click(function(){
+        $(".delete").closest("tr").hide()
+    })
+</script>
